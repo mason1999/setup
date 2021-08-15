@@ -13,6 +13,8 @@ git push -u origin master: "set upstream" so you can just type "git push"
 
 # ssh keys
 # remember to cd into you .ssh directory
+git config --global user.name "your name"
+git config --global user.email "your email"
 ssh-keygen -t rsa -b 4096 -C "masonwong1999@gmail.com" : 
 	-t = type of encryption
 	-b = stregnth of encryption 
