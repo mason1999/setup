@@ -1,7 +1,7 @@
-## Prerequisites 
+# Prerequisites 
 Make sure you have homebrew installed on your mac
 
-## Installing neovim 
+# Installing neovim 
 	brew install neovim
 
 - Note that it doesnt replace your vim out of the bat. 
@@ -9,61 +9,46 @@ Make sure you have homebrew installed on your mac
 - You can see this if you type in ```vim``` $\implies$ you actually go to vim
 
 - To use neovim use the command ```nvim```$\implies$ you actually go to neovim
-## alias and exporting the editor
+# alias and exporting the editor
 	nvim ~/.zshrc <-- Then type in 
 	alias vim='nvim'
 	export EDITOR='nvim'
 
-## Configuration file for neovim
+The next two sections just show the general structure to the configuration files, covering options, keymaps, plugins and colorschemes. You could essentially just clone the neovim repository down and achieve everything there but feel free to give it a read. 
+
+# Configuration file for neovim
 Go to a neovim file and type in 
 
 	:help vimrc
-This will show you **what** the configuration file should be called. In old vim it was called ```.vimrc``` located at ```~/.vimrc```. In neovim it will be called ```init.vim``` located at ```~/.config/nvim/init.vim```. We will need to recursively create the directories for the config file. 
+This will show you **what** the configuration file should be called. In old vim it was called ```.vimrc``` located at ```~/.vimrc```. In neovim it will be called `init`. So either it is an `init.vim` file or an `init.lua` file located inside the directory `~/.config/nvim/`. We will need to recursively create the directories for the config file. 
 
 	mkdir -p ~/.config/nvim
 	cd ~/.config/nvim
-	vim init.vim # save this file. 
-	touch init.vim # OR THIS ONE. DON'T USE BOTH. This just creates the file. 
+  touch init.lua
 
-## Installing a plug manager for vim 
-Click on the following [link](https://github.com/junegunn/vim-plug) and get ready to copy a command\
+# lua directory, namespace mason with our configuration modularised
+Next what we do is we make a directory called lua, with another directory (can be called anything) called mason inside of it
 
-We now assume we're in the path ```~/.config/nvim```. We not create the ```autoload``` folder and change our current directory into it
+  cd ~/.config/nvim
+  mkdir -p ./lua/mason
 
-	mkdir autoload
-	cd autoload
+Then create various modularised to do with: 
+1. options
+2. keymaps
+3. plugins
+4. colorschemes
 
-You can find the following command on the website, but we need to modify it by only taking the website link:
-	
-	curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+  touch ~/.config/nvim/lua/mason/options.lua
+  touch ~/.config/nvim/lua/mason/keymaps.lua
+  touch ~/.config/nvim/lua/mason/plugins.lua
+  touch ~/.config/nvim/lua/mason/colorschemes.lua
 
-Note that this will only print the plugin managers vimscript to ```stdout```. However, we want to write the output to a file called ```plug.vim```. Remember we're still in ```~/.config/nvim/autoload```
+Then create the directory for the compiled packer lua file. This file just speeds up the execution of neovim 
 
-	curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o plug.vim
+  cd ~/.config/nvim
+  mkdir plugin
+  cd ~/.config/nvim/plugin
+  touch packer_compiled.lua
 
-## The first settings we put in our init.vim file
 
-	" Don't be compatible with vi or vim
-	set nocompatible
-	" We're gonna turn filetype off BEFORE we load allota plugins
-	filetype off
-	" We call the plugin manager straight away. The following argument is the path to the plugins
-	call plug#begin('~/.config/nvim/plugged')
 
-	call plug#end()
-
-continue to the ```~/.config/nvim/init.vim``` file. 
-
-## using the plugin manager
-In between the 
-	
-	call plug#begin('~/.config/nvim/plugged')
-		# Put your plugins here. e.g Plug 'morhetz/plugged'
-	call plug#end()
-After that use the commands
-	
-	:wq
-	vim init.vim
-	:Pluginstall
-
-After that you can use the new plugin
