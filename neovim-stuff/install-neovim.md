@@ -53,4 +53,10 @@ Then create the directory for the compiled packer lua file. This file just speed
       touch packer_compiled.lua
 
 
+# Installing nerdfonts
+On the mac it's quit easy. Just do 
 
+    brew tap homebrew/cask-fonts
+    brew install --cask font-hack-nerd-font
+
+Afterwards, go to `iterm2` $\implies$ `preferences` $\implies$ `profiles` $\implies$ `text` $\implies$ `font` $\implies$ `hack nerd font`
