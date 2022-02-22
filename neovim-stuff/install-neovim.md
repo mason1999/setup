@@ -40,10 +40,10 @@ Then create various modularised to do with:
 
 The code is given by: 
 
-  touch ~/.config/nvim/lua/mason/options.lua
-  touch ~/.config/nvim/lua/mason/keymaps.lua
-  touch ~/.config/nvim/lua/mason/plugins.lua
-  touch ~/.config/nvim/lua/mason/colorschemes.lua
+    touch ~/.config/nvim/lua/mason/options.lua
+    touch ~/.config/nvim/lua/mason/keymaps.lua
+    touch ~/.config/nvim/lua/mason/plugins.lua
+    touch ~/.config/nvim/lua/mason/colorschemes.lua
 
 Then create the directory for the compiled packer lua file. This file just speeds up the execution of neovim 
 
