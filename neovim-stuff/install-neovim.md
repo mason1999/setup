@@ -22,15 +22,15 @@ Go to a neovim file and type in
 	:help vimrc
 This will show you **what** the configuration file should be called. In old vim it was called ```.vimrc``` located at ```~/.vimrc```. In neovim it will be called `init`. So either it is an `init.vim` file or an `init.lua` file located inside the directory `~/.config/nvim/`. We will need to recursively create the directories for the config file. 
 
-	mkdir -p ~/.config/nvim
-	cd ~/.config/nvim
-  touch init.lua
+    mkdir -p ~/.config/nvim
+    cd ~/.config/nvim
+    touch init.lua
 
 # lua directory, namespace mason with our configuration modularised
 Next what we do is we make a directory called lua, with another directory (can be called anything) called mason inside of it
 
-  cd ~/.config/nvim
-  mkdir -p ./lua/mason
+    cd ~/.config/nvim
+    mkdir -p ./lua/mason
 
 Then create various modularised to do with: 
 1. options
@@ -38,17 +38,17 @@ Then create various modularised to do with:
 3. plugins
 4. colorschemes
 
-  touch ~/.config/nvim/lua/mason/options.lua
-  touch ~/.config/nvim/lua/mason/keymaps.lua
-  touch ~/.config/nvim/lua/mason/plugins.lua
-  touch ~/.config/nvim/lua/mason/colorschemes.lua
+      touch ~/.config/nvim/lua/mason/options.lua
+      touch ~/.config/nvim/lua/mason/keymaps.lua
+      touch ~/.config/nvim/lua/mason/plugins.lua
+      touch ~/.config/nvim/lua/mason/colorschemes.lua
 
 Then create the directory for the compiled packer lua file. This file just speeds up the execution of neovim 
 
-  cd ~/.config/nvim
-  mkdir plugin
-  cd ~/.config/nvim/plugin
-  touch packer_compiled.lua
+      cd ~/.config/nvim
+      mkdir plugin
+      cd ~/.config/nvim/plugin
+      touch packer_compiled.lua
 
 
 
