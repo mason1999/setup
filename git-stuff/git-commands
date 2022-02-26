@@ -25,6 +25,7 @@ pbcopy < ~/id_rsa.pub : copies the key so you can paste it
 
 # branching 
 git branch : see all branches
+git branch -m master main: rename the 'master' branch to the 'main' branch. 
 git diff : see changes since last commit
 git merge master : merges from the branch you're on to the master branch
 git checkout name-of-brach : jump to new branch

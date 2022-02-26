@@ -152,3 +152,11 @@ The options are given below:
 To see the options. For example `blameline`
 
     :Gitsigns [tab] 
+
+# nvim tree
+Basically a new window so can navigate it with `h` and `j`. 
+
+Some useful things include: 
+- `a` : adding a file 
+- `r` : rename the file 
+- `d` : delete a file 
