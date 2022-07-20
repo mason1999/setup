@@ -25,7 +25,7 @@ To setup we need to start off by setting up our email and username.
 
 We also set the default branch name
 
-    git config --global init.defualt branch main 
+    git config --global init.defaultBranch main 
 
 We can also see a list of the parameters we have set with
 
